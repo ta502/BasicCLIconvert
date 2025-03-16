@@ -39,5 +39,8 @@ public class TestResultAccuracy {
         System.out.println("5 gigabytes is 5000 megabytes");
         double programResult12 = Converts.megabytesToGigabytes(5000);
         System.out.println(programResult12);
+        System.out.println("binary number 11011011 is 219 in decimal");
+        int programResult13 = Converts.binaryToDecimal("11011011");
+        System.out.println(programResult13);
     }
 }

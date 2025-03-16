@@ -46,4 +46,8 @@ public class Converts {
     public static double megabytesToGigabytes(double megabytes) {
         return megabytes / 1024;
     }
+
+    public static int binaryToDecimal(String binaryNum) {
+        return Integer.parseInt(binaryNum, 2);
+    }
 }

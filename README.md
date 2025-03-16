@@ -20,6 +20,7 @@ It can convert:
 - Bytes to Kilobytes
 - Kilobytes to Megabytes
 - Megabytes to Gigabytes
+- Binary to Decimal
 
 **Fun fact**: This project is one of the biggest projects in my life!
 

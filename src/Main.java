@@ -26,6 +26,7 @@ public class Main {
                 System.out.println("10. Bytes to Kilobytes");
                 System.out.println("11. Kilobytes to Megabytes");
                 System.out.println("12. Megabytes to Gigabytes");
+                System.out.println("13. Binary to Decimal");
                 int userInput = scan.nextInt();
                 switch (userInput) {
                     case 0 -> {
@@ -37,7 +38,7 @@ public class Main {
                         System.out.println("Number of meters?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.metersToFeet(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " feet");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 2 -> {
@@ -45,7 +46,7 @@ public class Main {
                         System.out.println("Number of kilometers?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.kilometersToMiles(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " miles");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 3 -> {
@@ -53,7 +54,7 @@ public class Main {
                         System.out.println("Number of yards?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.yardsToMeters(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " meters");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 4 -> {
@@ -61,7 +62,7 @@ public class Main {
                         System.out.println("Number of kilograms?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.kilogramsToPounds(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " pounds");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 5 -> {
@@ -69,7 +70,7 @@ public class Main {
                         System.out.println("Number of ounces?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.ouncesToGrams(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " grams");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 6 -> {
@@ -77,7 +78,7 @@ public class Main {
                         System.out.println("Number of celsius?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.celsiusToFahrenheit(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " fahrenheit");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 7 -> {
@@ -85,7 +86,7 @@ public class Main {
                         System.out.println("Number of kelvin?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.kelvinToCelsius(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " celsius");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 8 -> {
@@ -93,7 +94,7 @@ public class Main {
                         System.out.println("Number of seconds?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.secondsToMinutes(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " minutes");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 9 -> {
@@ -101,7 +102,7 @@ public class Main {
                         System.out.println("Number of minutes?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.minutesToHours(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " hours");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 10 -> {
@@ -109,7 +110,7 @@ public class Main {
                         System.out.println("Number of bytes?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.bytesToKilobytes(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " kilobytes");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 11 -> {
@@ -117,7 +118,7 @@ public class Main {
                         System.out.println("Number of kilobytes?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.kilobytesToMegabytes(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " megabytes");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     case 12 -> {
@@ -125,7 +126,15 @@ public class Main {
                         System.out.println("Number of megabytes?");
                         double userInput2 = scan.nextDouble();
                         double result = Converts.megabytesToGigabytes(userInput2);
-                        System.out.println("Result: " + result);
+                        System.out.println("Result: " + result + " gigabytes");
+                        TimeUnit.SECONDS.sleep(2);
+                    }
+                    case 13 -> {
+                        System.out.println("Info: you're converting from binary to decimal.");
+                        System.out.println("Binary number?");
+                        String userInput2 = scan.next();
+                        int result = Converts.binaryToDecimal(userInput2);
+                        System.out.println("Result: " + result  + " decimal");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     default -> throw new InputMismatchException();
@@ -135,6 +144,8 @@ public class Main {
             System.out.println("Input Invalid, Message for more details: " + e.getMessage());
         } catch (InterruptedException e) {
             System.out.println("Interrupted.");
+        } catch (NumberFormatException e) {
+            System.out.println("Number Invalid, Message for more details: " + e.getMessage());
         }
     }
 }
