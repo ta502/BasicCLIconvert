@@ -4,8 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
+        // Create scanner so the program can receive user input, using try-with-resources so it autocloses
         try (Scanner scan = new Scanner(System.in)) {
             System.out.println("Welcome to BasicCLIconvert, a simple command-line program to convert units.");
+            // Make a loop so the program can run forever until the user inputs 0 to exit
             while (true) {
                 System.out.println("Type '0' to exit.");
                 System.out.println("What you want to do?");
@@ -27,9 +29,12 @@ public class Main {
                 System.out.println("11. Kilobytes to Megabytes");
                 System.out.println("12. Megabytes to Gigabytes");
                 System.out.println("13. Binary to Decimal");
+                // Receive user input
                 int userInput = scan.nextInt();
+                // Get the user's desired function based on their input
                 switch (userInput) {
                     case 0 -> {
+                        // Exit the program
                         System.out.println("Info: Exit.");
                         System.exit(0);
                     }
@@ -137,14 +142,18 @@ public class Main {
                         System.out.println("Result: " + result  + " decimal");
                         TimeUnit.SECONDS.sleep(2);
                     }
+                    // Throw invalid input exception if the user types incorrect number
                     default -> throw new InputMismatchException();
                 }
             }
         } catch (InputMismatchException e) {
+            // Catch invalid input
             System.out.println("Input Invalid, Message for more details: " + e.getMessage());
         } catch (InterruptedException e) {
+            // Catch interrupted exception
             System.out.println("Interrupted.");
         } catch (NumberFormatException e) {
+            // Catch incorrect number format
             System.out.println("Number Invalid, Message for more details: " + e.getMessage());
         }
     }
