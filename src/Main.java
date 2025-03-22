@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-        // Create scanner so the program can receive user input, using try-with-resources so it autocloses
+        // Create scanner so the program can receive user input, using try-with-resources so it automatically closes
         try (Scanner scan = new Scanner(System.in)) {
             System.out.println("Welcome to BasicCLIconvert, a simple command-line program to convert units.");
             // Make a loop so the program can run forever until the user inputs 0 to exit
@@ -139,7 +139,7 @@ public class Main {
                         System.out.println("Binary number?");
                         String userInput2 = scan.next();
                         int result = Converts.binaryToDecimal(userInput2);
-                        System.out.println("Result: " + result  + " decimal");
+                        System.out.println("Result: " + result + " decimal");
                         TimeUnit.SECONDS.sleep(2);
                     }
                     // Throw invalid input exception if the user types incorrect number
@@ -148,13 +148,13 @@ public class Main {
             }
         } catch (InputMismatchException e) {
             // Catch invalid input
-            System.out.println("Input Invalid, Message for more details: " + e.getMessage());
+            System.err.println("Input Invalid, Message for more details: " + e.getMessage());
         } catch (InterruptedException e) {
             // Catch interrupted exception
-            System.out.println("Interrupted.");
+            System.err.println("Interrupted.");
         } catch (NumberFormatException e) {
             // Catch incorrect number format
-            System.out.println("Number Invalid, Message for more details: " + e.getMessage());
+            System.err.println("Number Invalid, Message for more details: " + e.getMessage());
         }
     }
 }
